@@ -3,7 +3,7 @@
 <img width="1772" alt="Screen Shot 2022-10-18 at 11 28 33 PM" src="https://user-images.githubusercontent.com/31152976/196591146-f237543f-46ae-4e61-a199-a8e8457a07d9.png">
 
 
-# Tools Used
+# Tools 
 
 Link to source of data: https://collegescorecard.ed.gov/
 
