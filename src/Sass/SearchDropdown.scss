@@ -1,0 +1,28 @@
+@import "./variables";
+
+.dropdown {
+  position: relative;
+  z-index: 2;
+  .dropdown-schools {
+    position: absolute;
+    background-color: whitesmoke;
+    width: 200px;
+    max-height: 150px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    @media screen and (min-width: $tabletWidth) {
+      max-height: 200px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: border-box;
+      border: 1px solid gainsboro;
+      text-align: left;
+      color: black;
+      font-size: 0.8rem;
+    }
+  }
+}

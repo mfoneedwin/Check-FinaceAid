@@ -1,0 +1,166 @@
+@import "./variables";
+@import "./Home";
+@import "./SearchDropdown";
+@import "./scoreResult";
+
+.App {
+  text-align: center;
+  margin: auto;
+  font-family: $mainFont;
+  color: white;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  z-index: 1;
+  @media screen and (min-width: $tabletWidth) {
+    height: 10vh;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-family: $mainFont;
+    font-weight: 300;
+    color: whitesmoke;
+    @media screen and (min-width: $tabletWidth) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.gradient-btn {
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  font-family: $mainFont;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  background: linear-gradient(to left, $darkorchid, $darkorchid);
+  background-size: 200% auto;
+  color: white;
+  transition: all 0.3s ease;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  &:hover {
+    background-position: right center;
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
+
+input {
+  width: 200px;
+  border: none;
+  outline: none;
+  font-family: $mainFont;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+}
+
+.modal-container {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  padding: 2rem;
+  background-color: $lightslategrey;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.2rem;
+  button {
+    @extend .gradient-btn;
+    background: $darkgreen;
+    background-size: auto;
+    margin-top: 1rem;
+    width: 100px;
+  }
+  @media screen and (min-width: $tabletWidth) {
+    width: 300px;
+    font-size: 1.4rem;
+  }
+}
+
+@media print {
+  html,
+  body {
+    color: white;
+    text-align: center;
+    font-family: $mainFont;
+  }
+  .grade {
+    font-size: 8rem;
+  }
+  .grade-container {
+    margin: 0;
+  }
+  .grade-container h1 {
+    overflow: visible !important;
+    height: 100px !important;
+    font-weight: 300;
+    color: whitesmoke;
+    font-size: 2rem;
+  }
+  .score-result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  .school-link-btn {
+    display: none;
+  }
+  .grade-container span {
+    width: 400px;
+    font-size: 1.2rem;
+  }
+  .school-info {
+    position: relative;
+    left: 100px;
+  }
+  .school-info span {
+    width: 600px;
+    font-size: 1.6rem;
+    justify-content: flex-start;
+  }
+  .school-info span i {
+    display: grid;
+    place-items: center;
+    background-color: $darkgreen;
+    width: 30px;
+    height: 30px;
+    margin: 0 0.5rem;
+  }
+  .school-btn-container {
+    display: none;
+  }
+  .fa-question-circle {
+    display: none !important;
+  }
+}
+
+

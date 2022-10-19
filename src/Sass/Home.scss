@@ -1,0 +1,295 @@
+@import "./variables";
+
+.home-main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  min-height: 90vh;
+  &::after {
+    content: "";
+    display: block;
+    height: 100px;
+  }
+  .headline-container {
+    position: relative;
+    text-align: left;
+    padding: 0 1.5rem;
+    .circle1 {
+      position: absolute;
+      left: 5px;
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      background-color:  #006400;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+    .circle2 {
+      @extend .circle1;
+      left: 300px;
+      top: 900px;
+      width: 150px;
+      height: 150px;
+    }
+    h1 {
+      position: relative;
+    }
+  }
+  @media screen and (min-width: $tabletWidth) {
+    width: 90%;
+    margin: 0 auto;
+    .headline-container {
+      padding: 2rem;
+      font-size: 1.6rem;
+      .circle1 {
+        top: -200px;
+        left: -300px;
+        width: 500px;
+        height: 500px;
+      }
+      .circle2 {
+        left: 800px;
+        top: 800px;
+        width: 200px;
+        height: 200px;
+      }
+      h1 {
+        position: relative;
+      }
+    }
+  }
+  @media screen and (min-width: $desktopWidth) {
+    width: 80%;
+    flex-direction: row;
+    .headline-container {
+      font-size: 3.5rem;
+      width: 800px;
+      @media screen and (max-height: 800px) {
+        font-size: 3rem;
+      }
+      .circle1 {
+        top: -200px;
+        left: -300px;
+        width: 800px;
+        height: 800px;
+      }
+      .circle2 {
+        left: 600px;
+        top: 800px;
+        width: 300px;
+        height: 300px;
+      }
+    }
+    .step-containers {
+      flex-direction: column;
+    }
+  }
+  @media screen and (min-width: $LGdesktop) {
+    width: 75%;
+    .headline-container {
+      font-size: 4rem;
+      padding: 1rem;
+      width: unset;
+      h1 {
+        position: relative;
+      }
+    }
+  }
+}
+
+.step1-container {
+  z-index: 2;
+  position: relative;
+  right: 50px;
+  width: 300px;
+  height: 200px;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color:  #006400;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  margin: 4rem auto;
+  box-sizing: border-box;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
+  h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    @media screen and (min-width: $tabletWidth) {
+      font-size: 1.8rem;
+    }
+  }
+  p {
+    margin-top: 0.05rem;
+    font-weight: 300;
+  }
+  input {
+    margin: 0;
+  }
+  @media screen and (min-width: $tabletWidth) {
+    align-items: flex-start;
+  }
+  @media screen and (min-width: $desktopWidth) {
+    right: 100px;
+    margin: 2rem auto;
+    @media screen and (max-height: 800px) {
+      margin: 1.6rem auto;
+      height: 175px;
+    }
+  }
+  @media screen and (min-width: $LGdesktop) {
+    width: 400px;
+    height: 225px;
+  }
+}
+
+.step2-container {
+  @extend .step1-container;
+  left: 50px;
+  align-items: flex-start;
+  z-index: 1;
+  @media screen and (min-width: $desktopWidth) {
+    left: 0px;
+  }
+}
+
+.step3-container {
+  @extend .step1-container;
+
+  @media screen and (min-width: $desktopWidth) {
+    align-items: center;
+    left: 100px;
+  }
+
+  h3 {
+    @media screen and (min-width: $desktopWidth) {
+      align-self: flex-start;
+    }
+    margin-bottom: 1rem;
+  }
+
+  .gradient-btn {
+    @media screen and (min-width: $LGdesktop) {
+      width: 250px;
+      height: 75px;
+      font-size: 1rem;
+    }
+  }
+  .unclickable {
+    background: silver;
+  }
+}
+
+.state-select {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+  label {
+    line-height: 1;
+  }
+  #inState {
+    opacity: 0;
+    width: 20px;
+    position: absolute;
+    left: 70px;
+    cursor: pointer;
+    &:checked + .radio-control-in::after {
+      transform: scale(1);
+    }
+  }
+  #outState {
+    opacity: 0;
+    width: 20px;
+    position: absolute;
+    right: 7px;
+    cursor: pointer;
+    &:checked + .radio-control-out::after {
+      transform: scale(1);
+    }
+  }
+  .radio-control-in {
+    display: grid;
+    place-items: center;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 5px;
+    border-radius: 50%;
+    border: 2px solid #778899;
+    padding: 2px;
+    @media screen and (min-width: $tabletWidth) {
+      width: 1rem;
+      height: 1rem;
+    }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #778899;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  .radio-control-out {
+    @extend .radio-control-in;
+  }
+}
+
+.error {
+  position: absolute;
+  color: #778899;
+  font-weight: 700;
+  bottom: 25px;
+}
+
+.home-footer {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  height: 10vh;
+  p {
+    position: relative;
+    a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+    }
+  }
+  a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+  }
+  .circle2 {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #006400;
+  }
+  @media screen and (min-width: $tabletWidth) {
+    width: 50%;
+    .circle2 {
+      right: 0px;
+      top: -50px;
+      width: 400px;
+      height: 400px;
+    }
+  }
+}

@@ -1,0 +1,229 @@
+@import "./variables";
+
+.score-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 90vh;
+  margin: auto;
+}
+
+.score-result-container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  margin-top: -50px;
+  width: 90%;
+  @media screen and (min-width: $tabletWidth) {
+    background-color: $darkgreen;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+      0 100px 80px rgba(0, 0, 0, 0.07);
+    width: 600px;
+  }
+  @media screen and (min-width: $desktopWidth) {
+    width: 75%;
+    padding: 4rem;
+    flex-direction: row;
+    justify-content: space-around;
+    @media screen and (max-height: 800px) {
+      padding: 2.4rem;
+    }
+  }
+
+  button {
+    margin: 1rem;
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.8rem 0;
+    @media screen and (min-width: $tabletWidth) {
+      font-size: 1.2rem;
+    }
+    @media screen and (min-width: $desktopWidth) {
+      font-size: 2rem;
+    }
+    i {
+      display: grid;
+      place-items: center;
+      background-color: $darkgreen;
+      border-radius: 50%;
+      padding: 0.6rem;
+      margin: 0 0.6rem;
+      --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      @media screen and (min-width: $tabletWidth) {
+        background-color: $lightslategrey;
+      }
+      @media screen and (min-width: $desktopWidth) {
+        padding: 0;
+        width: 50px;
+        height: 50px;
+        box-sizing: border-box;
+        margin: 0 1rem;
+      }
+    }
+    .fa-question-circle {
+      padding: 0;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      background: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.grade-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -40px;
+  @media screen and (min-width: $tabletWidth) {
+    margin-top: none;
+    margin: 0 1rem;
+  }
+
+  .printable-header {
+    display: none;
+  }
+
+  .grade {
+    display: grid;
+    place-items: center;
+    font-size: 8rem;
+    font-weight: 200;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    @media screen and (min-width: $desktopWidth) {
+      font-size: 18rem;
+      width: 350px;
+      height: 350px;
+      padding: 2rem;
+      @media screen and (max-height: 800px) {
+        font-size: 14rem;
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+
+  span {
+    width: 300px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    @media screen and (min-width: $tabletWidth) {
+      width: 400px;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.school-info {
+  font-family: $mainFont;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  @media screen and (max-width: $phoneWidth) {
+    padding: 0;
+  }
+  @media screen and (min-width: $tabletWidth) {
+    align-items: flex-start;
+    margin: 0 1rem;
+  }
+
+  span {
+    padding: 0.2rem 0.5rem;
+    font-size: 1.2rem;
+    @media screen and (max-width: $phoneWidth) {
+      font-size: 1rem;
+      padding: 0.2rem;
+    }
+    @media screen and (min-width: $tabletWidth) {
+      font-size: 1.6rem;
+      margin: 1rem 0;
+      padding: 0.5rem;
+      @media screen and (max-height: 800px) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .school-btn-container {
+    margin: auto;
+    text-align: center;
+    .school-btn {
+      outline: none;
+      border: 3px solid $darkgreen;
+      border-radius: 15px;
+      width: 100px;
+      height: 50px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      font-family: $mainFont;
+      background: transparent;
+      color: white;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      .fa-download {
+        margin-right: 0.4rem;
+      }
+      &:hover {
+        background: $lightslategrey;
+        color: white;
+      }
+      @media screen and (min-width: $tabletWidth) {
+        font-size: 0.8rem;
+        width: 175px;
+        border: 3px solid $lightslategrey;
+      }
+      .score-back-btn {
+        margin: auto;
+        align-self: center;
+      }
+    }
+  }
+
+  .fa-question-circle {
+    margin: 0 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.score-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  height: 10vh;
+  a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+  }
+  @media screen and (min-width: $tabletWidth) {
+    width: 50%;
+  }
+}
